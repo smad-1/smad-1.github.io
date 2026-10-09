@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sadia Sultana | NLP, LLMs and Retrieval-Augmented Generation</title>
+<meta name="description" content="Sadia Sultana, prospective PhD student (Fall 2027) working on NLP, LLMs and RAG. Lecturer, Daffodil International University. B.Sc. CSE, IUT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#ffffff; --panel:#f8f9f7; --ink:#2b2f2c; --mute:#6b726d; --line:#e6e9e4; --accent:#3f6f5c; --accent-soft:#eaf1ed;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#171b19;--panel:#1e2421;--ink:#e8ece9;--mute:#9aa59e;--line:#2d3531;--accent:#8fc3ab;--accent-soft:#233029}
+}
+:root[data-theme="dark"]{--bg:#171b19;--panel:#1e2421;--ink:#e8ece9;--mute:#9aa59e;--line:#2d3531;--accent:#8fc3ab;--accent-soft:#233029}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--serif)}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:260px 1fr;gap:64px}
+aside{position:sticky;top:0;align-self:start;padding:56px 0;font-family:var(--sans)}
+.photo{position:relative;width:132px;height:132px;border-radius:50%;overflow:hidden;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font:600 36px var(--serif);margin:0 0 20px;border:1px solid var(--line)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cv{display:inline-block;font-weight:600;border:1px solid var(--accent);padding:6px 14px;border-radius:999px;text-decoration:none}
+.cv:hover{background:var(--accent-soft)}
+aside h1{font:600 30px/1.15 var(--serif);margin:0 0 6px;letter-spacing:-.01em}
+aside .role{color:var(--mute);font-size:15px;margin:0 0 24px}
+aside .status{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:13px;padding:5px 10px;border-radius:999px;margin-bottom:24px}
+aside ul{list-style:none;margin:0 0 28px;padding:0;font-size:15px}
+aside li{margin:0 0 8px}
+nav{display:flex;flex-direction:column;gap:6px;border-left:2px solid var(--line);padding-left:14px;font-size:15px}
+nav a{color:var(--mute);text-decoration:none}
+nav a:hover{color:var(--accent)}
+main{padding:56px 0 80px;min-width:0}
+section{padding:0 0 52px}
+h2{font:600 26px/1.2 var(--serif);margin:0 0 20px;letter-spacing:-.005em}
+p{margin:0 0 14px;max-width:68ch}
+.lead{font-size:22px;line-height:1.5;max-width:30em}
+.lead em{font-style:normal;color:var(--accent)}
+.paper{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px}
+.paper h3{font:600 22px/1.3 var(--serif);margin:0 0 8px}
+.meta{font:500 14px/1.5 var(--sans);color:var(--mute);margin:0 0 16px}
+.result{display:flex;gap:10px;align-items:baseline;border-top:1px solid var(--line);margin-top:18px;padding-top:14px}
+.result b{font:600 18px/1.4 var(--sans);color:var(--accent);white-space:nowrap}
+.result span{font:15px/1.5 var(--sans);color:var(--mute)}
+.interests{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none;font-family:var(--sans);font-size:15px}
+.interests li{border:1px solid var(--line);background:var(--panel);padding:6px 14px;border-radius:999px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:0 0 22px}
+.row .when{font:500 14px/1.7 var(--sans);color:var(--mute)}
+.row h3{font:600 18px/1.35 var(--serif);margin:0}
+.row .sub{font:15px/1.5 var(--sans);color:var(--mute);margin:0 0 6px}
+.row p{margin:0 0 6px;font-size:16px}
+.proj{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.proj article{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+.proj h3{font:600 18px/1.3 var(--serif);margin:0 0 2px}
+.proj .tag{font:500 13px/1.4 var(--sans);color:var(--accent);margin:0 0 8px}
+.proj p{font-size:15px;line-height:1.5;margin:0}
+.skills{display:grid;grid-template-columns:150px 1fr;gap:10px 20px;font-family:var(--sans);font-size:15px;margin:0}
+.skills dt{color:var(--mute)}
+.skills dd{margin:0}
+footer{font:14px/1.5 var(--sans);color:var(--mute);border-top:1px solid var(--line);padding-top:20px}
+@media (max-width:860px){
+  .result{flex-direction:column;gap:2px}
+  .wrap{grid-template-columns:1fr;gap:0}
+  aside{position:static;padding:40px 0 8px}
+  nav{flex-direction:row;flex-wrap:wrap;border-left:0;padding:0;gap:6px 18px}
+  main{padding-top:28px}
+  .row,.skills{grid-template-columns:1fr;gap:2px}
+  .lead{font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <!-- Photo: upload your picture to an "assets" folder as photo.jpg (square works best) -->
+  <div class="photo"><span aria-hidden="true">SS</span><img src="assets/photo.jpg" alt="Photo of Sadia Sultana" onerror="this.remove()"></div>
+  <h1>Sadia Sultana</h1>
+  <p class="role">Lecturer, Software Engineering<br>Daffodil International University</p>
+  <span class="status">Applying for PhD, Fall 2027</span>
+  <ul>
+    <li><a href="mailto:sultanadia538@gmail.com">sultanadia538@gmail.com</a></li>
+    <li><a href="https://github.com/smad-1" rel="noopener">GitHub: smad-1</a></li>
+    <li><a href="https://www.linkedin.com/in/sadia-sultana-11515b2bb/" rel="noopener">LinkedIn</a></li>
+    <li><a class="cv" href="assets/cv.pdf" download>Download CV (PDF)</a></li>
+    <li><a href="https://arxiv.org/abs/2511.04560" rel="noopener">Paper on arXiv</a></li>
+  </ul>
+  <nav aria-label="Sections">
+    <a href="#research">Research</a>
+    <a href="#education">Education</a>
+    <a href="#scores">Test scores</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+  </nav>
+</aside>
+
+<main>
+  <section id="about">
+    <p class="lead">I study how language models can give <em>reliable, grounded answers</em> in languages and domains where data is scarce, starting with Bangla biomedical question answering.</p>
+    <p>I completed my B.Sc. in Computer Science and Engineering at the Islamic University of Technology and now teach software engineering at Daffodil International University. I am applying to PhD programs for Fall 2027 and am looking for advisors working on NLP, large language models and retrieval-augmented generation.</p>
+    <ul class="interests" aria-label="Research interests">
+      <li>Natural Language Processing</li>
+      <li>Large Language Models</li>
+      <li>Retrieval-Augmented Generation</li>
+      <li>Low-resource languages</li>
+      <li>Biomedical QA</li>
+    </ul>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="paper">
+      <h3>Evaluating Retrieval-Augmented Generation Strategies for Bangla Biomedical Question Answering</h3>
+      <p class="meta">Undergraduate thesis, 2025. Accepted at IEEE FMLDS 2026. <a href="https://arxiv.org/abs/2511.04560" rel="noopener">Preprint on arXiv</a></p>
+      <p>I built and compared several RAG strategies for multiple-choice biomedical question answering in Bangla, using BanglaMedQA and BanglaMMedBench (2,000 questions in total). Each strategy paired a retrieval approach with a large language model, and the study asks how knowledge-grounded generation can make biomedical answers in Bangla more reliable.</p>
+      <div class="result">
+        <b>89.54%</b>
+        <span>highest accuracy, reached by Agentic RAG, the best of the strategies evaluated</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="row">
+      <div class="when">Jun 2021 to Oct 2025</div>
+      <div><h3>B.Sc. in Computer Science and Engineering</h3>
+      <p class="sub">Islamic University of Technology (IUT), Gazipur</p>
+      <p>CGPA 3.84, First Class with Honours. Coursework includes Artificial Intelligence, Machine Learning, Pattern Recognition, Data Mining, Bioinformatics, Human Computer Interaction and Database Systems.</p></div>
+    </div>
+    <div class="row">
+      <div class="when">Jun 2018 to Jun 2020</div>
+      <div><h3>A-Level (Advanced Level)</h3>
+      <p class="sub">Maple Leaf International School, Dhaka</p>
+      <p>GPA 5.00. The Daily Star Award for Edexcel High Achievers, 2020.</p></div>
+    </div>
+    <div class="row">
+      <div class="when">Jan 2018 to Jun 2018</div>
+      <div><h3>O-Level (Ordinary Level)</h3>
+      <p class="sub">Maple Leaf International School, Dhaka</p>
+      <p>GPA 5.00. The Daily Star Award for Edexcel High Achievers, 2018.</p></div>
+    </div>
+  </section>
+
+  <section id="scores">
+    <h2>Test scores</h2>
+    <div class="row">
+      <div class="when">English proficiency</div>
+      <div><h3>IELTS Academic: 8.5</h3>
+      <p class="sub">Listening 9, Reading 8.5, Writing 7, Speaking 8.5</p></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="row">
+      <div class="when">Jan 2026 to present</div>
+      <div><h3>Lecturer</h3>
+      <p class="sub">Department of Software Engineering, Daffodil International University, Savar</p>
+      <p>Teach theory and laboratory courses, including Web Applications and Design and the Capstone Project. Serve as Module Leader, coordinating course planning, learning outcomes and assessment.</p></div>
+    </div>
+    <div class="row">
+      <div class="when">Jun to Jul 2024</div>
+      <div><h3>Flutter Developer Intern</h3>
+      <p class="sub">Battery Low Interactive Ltd., Dhaka</p>
+      <p>Trained in cross-platform mobile development with Flutter and Dart: UI design, state management, API integration, Firebase and responsive layouts.</p></div>
+    </div>
+    <div class="row">
+      <div class="when">Apr 2024</div>
+      <div><h3>IUT Computer Society</h3>
+      <p class="sub">Assistant Publications Executive and Volunteer</p>
+      <p>Co-edited the BEACON magazine for IUT ICT Fest 2024 and volunteered at its DevOps Hackathon.</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected projects</h2>
+    <div class="proj">
+      <article><h3>MoodDecoder</h3><p class="tag">Pattern Recognition</p><p>Speech emotion recognition on the MELD dataset with transformer-based models, including preprocessing, fine-tuning and evaluation.</p></article>
+      <article><h3>DigitAid</h3><p class="tag">Machine Learning</p><p>A tool for dyslexic learners that recognizes handwritten digits in real time, with data capture, dataset generation and training modules.</p></article>
+      <article><h3>SmoothOperator</h3><p class="tag">Human-Computer Interaction</p><p>Redesign of Bangladeshi mobile operator apps for usability and accessibility, with Figma prototypes built after user surveys and task analysis.</p></article>
+      <article><h3>PetPal</h3><p class="tag">Flutter</p><p>Mobile app for pet owners with GPS tracking, community support, online veterinary care and a pet store.</p></article>
+      <article><h3>Safety Sync</h3><p class="tag">Flutter</p><p>Personal safety app with location sharing, community interaction and real-time assistance.</p></article>
+      <article><h3>Rapid Red</h3><p class="tag">Java, JavaFX</p><p>Desktop application that gives emergency patients fast access to available blood donors.</p></article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Programming</dt><dd>Python, C/C++, Dart, Java, SQL</dd>
+      <dt>AI and ML</dt><dd>PyTorch, TensorFlow, Scikit-learn</dd>
+      <dt>Web</dt><dd>HTML/CSS/JS, MERN stack</dd>
+      <dt>Data</dt><dd>MySQL, MongoDB, Firebase</dd>
+      <dt>Tools</dt><dd>GitHub, VS Code, Google Colab, PyCharm, IntelliJ, Linux and shell scripting</dd>
+    </dl>
+  </section>
+
+  <footer>Contact: <a href="mailto:sultanadia538@gmail.com">sultanadia538@gmail.com</a> &nbsp;|&nbsp; <a href="assets/cv.pdf" download>Download CV</a></footer>
+</main>
+</div>
+</body>
+</html>
